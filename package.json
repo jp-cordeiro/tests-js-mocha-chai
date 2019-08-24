@@ -3,17 +3,14 @@
   "version": "1.0.0",
   "description": "TDD study with js",
   "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
   "dependencies": {
     "chai": "^4.2.0"
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
-    "test-tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch"
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel",
+    "test-tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch"
   },
   "license": "ISC",
   "author": "JP Codeiro <jpc.araujoti@gmail.com>",
@@ -23,9 +20,12 @@
     "library"
   ],
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-env": "^1.3.2",
-    "babel-register": "^6.24.0",
+    "@babel/core": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
     "chai": "^4.2.0 ",
     "eslint": "^4.0.0",
     "eslint-config-airbnb-base": "^11.2.0",

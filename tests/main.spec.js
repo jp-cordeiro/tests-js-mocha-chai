@@ -30,4 +30,31 @@ describe('Main', function () {
         });
     });
 
+    describe('sum', function () {
+        it('should return 4 when sum(2,2)', function () {
+            expect(calc.sum(2,2)).to.be.equal(4);
+        })
+    });
+
+    describe('sub', function () {
+        it('should return 0 when sub(2,2)', function () {
+            expect(calc.sub(2,2)).to.be.equal(0);
+        })
+    });
+
+    describe('mult', function () {
+        it('should return 0 when mult(2,2)', function () {
+            expect(calc.mult(2,2)).to.be.equal(4);
+        })
+    });
+
+    describe('div', function () {
+        it('should return 0 when div(2,2)', function () {
+            expect(calc.div(2,2)).to.be.equal(1);
+        })
+
+        it('should prohibit division by zero', function () {
+            expect(calc.div(2,0)).to.be.equal('Não é possível divisão por zero!');
+        })
+    });
 })

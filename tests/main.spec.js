@@ -1,60 +1,16 @@
 var expect = require('chai').expect;
-var calc = require('../src/main.js');
+import fizzBuzz from '../src/main';
 
 describe('Main', function () {
-
-    //smoke test
-    describe('Smoke tests', function () {
-        it('should exist the calc lib', function () {
-            expect(calc).to.exist;
-        });
-
-        it('should exist mothod sum', function () {
-            expect(calc.sum).to.exist;
-            expect(calc.sum).to.be.a('function');
-        });
-
-        it('should exist mothod sub', function () {
-            expect(calc.sub).to.exist;
-            expect(calc.sub).to.be.a('function');
-        });
-
-        it('should exist mothod div', function () {
-            expect(calc.div).to.exist;
-            expect(calc.div).to.be.a('function');
-        });
-
-        it('should exist mothod mult', function () {
-            expect(calc.mult).to.exist;
-            expect(calc.mult).to.be.a('function');
-        });
+    it('should return `fizz` when multiple of 3', function () {
+        expect(fizzBuzz(3)).to.be.equal('fizz');
     });
 
-    describe('sum', function () {
-        it('should return 4 when sum(2,2)', function () {
-            expect(calc.sum(2,2)).to.be.equal(4);
-        })
+    it('should return `buzz` when multiple of 3', function () {
+        expect(fizzBuzz(5)).to.be.equal('buzz');
     });
 
-    describe('sub', function () {
-        it('should return 0 when sub(2,2)', function () {
-            expect(calc.sub(2,2)).to.be.equal(0);
-        })
-    });
-
-    describe('mult', function () {
-        it('should return 0 when mult(2,2)', function () {
-            expect(calc.mult(2,2)).to.be.equal(4);
-        })
-    });
-
-    describe('div', function () {
-        it('should return 0 when div(2,2)', function () {
-            expect(calc.div(2,2)).to.be.equal(1);
-        })
-
-        it('should prohibit division by zero', function () {
-            expect(calc.div(2,0)).to.be.equal('Não é possível divisão por zero!');
-        })
+    it('should return `fizzBuzz` when multiple of 3 and 5', function () {
+        expect(fizzBuzz(15)).to.be.equal('fizzBuzz');
     });
 })

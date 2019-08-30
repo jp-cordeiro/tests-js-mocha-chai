@@ -9,8 +9,13 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js",
     "prepush": "npm run lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel",
-    "test-tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch"
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test-tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test-coverage": "nyc npm test"
+  },
+  "nyc": {
+    "reporter": ["text","html"],
+    "exclude": ["tests/**"]
   },
   "license": "ISC",
   "author": "JP Codeiro <jpc.araujoti@gmail.com>",
